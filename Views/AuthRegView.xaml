@@ -1,0 +1,145 @@
+﻿<Window x:Class="Lets_Meet.Views.AuthRegView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Lets_Meet"
+        xmlns:viewModels="clr-namespace:Lets_Meet.ViewModels"
+        xmlns:components="clr-namespace:Lets_Meet.Components"
+        mc:Ignorable="d"
+        Title="{Binding TitleText, UpdateSourceTrigger=PropertyChanged}" Height="{Binding Path=AuthRegWindowHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="{Binding Path=AuthRegWindowWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <!--Auth: 450 650 Reg: 800 800-->
+    
+    <Grid Background="LightGray">
+        <Grid>
+            <Border x:Name="BorderView" Height="{Binding AuthRegBoardHeight, UpdateSourceTrigger=PropertyChanged}" Width="{Binding AuthRegBoardWidth, UpdateSourceTrigger=PropertyChanged}" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="20">
+                <!--Auth: 350 550 Reg: 700 700-->
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" Color="LightGreen" ShadowDepth="0" />
+                </Border.Effect>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition x:Name="AuthRegRowHeight" Height="{Binding AuthRegRowHeight, UpdateSourceTrigger=PropertyChanged}" />
+                        <!--Auth: 200 Reg: 550-->
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Width="500">
+                        <Grid Width="500">
+                            <TextBlock x:Name="HeaderWelcomeViewTextBlock" Margin="0, 0, 0, 20" Text="{Binding HeaderText, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" FontSize="30" FontWeight="Bold" />
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Width="500">
+                        <Grid Width="500">
+                            <Button x:Name="SwitchToRegButton" Height="30" Width="150" HorizontalAlignment="Center" Margin="0, 0, 300, 0" Content="Регистрация" IsEnabled="{Binding SwToRegIsEnbl}" Command="{Binding SwitchToReg_Click}" />
+                            <Button x:Name="SwitchToAuthButton" Height="30" Width="150" HorizontalAlignment="Center" Margin="300, 0, 0, 0" Content="Авторизация" IsEnabled="{Binding SwToAuthIsEnbl}" Command="{Binding SwitchToAuth_Click}" />
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel x:Name="AuthRegViewSPWidth" Grid.Row="2" Orientation="Horizontal" Width="{Binding AuthRegSPWidth, UpdateSourceTrigger=PropertyChanged}">
+                        <!--Auth: 500 Reg: 650-->
+                        <Grid x:Name="AuthBody" Visibility="{Binding AuthBodyVisibility, UpdateSourceTrigger=PropertyChanged}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" Width="500">
+                                <Grid Width="500">
+                                    <TextBox x:Name="TypeLoginTextBoxAV" Height="40" Width="250" HorizontalAlignment="Center" VerticalContentAlignment="Bottom" materialDesign:HintAssist.Hint="Введите логин" Text="{Binding AuthLogin, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding AuthSignInToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding AuthSignInBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Width="500">
+                                <Grid Width="500">
+                                    <PasswordBox x:Name="TypePasswordTextBoxAV" Height="40" Width="250" HorizontalAlignment="Center" VerticalContentAlignment="Bottom" materialDesign:HintAssist.Hint="Введите пароль" ToolTip="{Binding AuthSignInToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding AuthSignInBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Orientation="Horizontal" Width="500">
+                                <Grid Width="500">
+                                    <Button x:Name="LogInButton" Height="30" Width="200" Margin="0, 20, 0, 0" Content="Войти" Command="{Binding SignIn_Click}" CommandParameter="{Binding ElementName=TypePasswordTextBoxAV}" IsDefault="True" />
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid x:Name="RegBody" Visibility="{Binding RegBodyVisibility, UpdateSourceTrigger=PropertyChanged}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="170" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="100" />
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <Border Background="White" Height="130" Width="130" VerticalAlignment="Center" CornerRadius="20">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="30" Color="LightPink" ShadowDepth="0" />
+                                        </Border.Effect>
+
+                                        <Image x:Name="SetAvatarImage" Source="{Binding AvatarSourse, UpdateSourceTrigger=PropertyChanged}" Height="130" Width="130" />
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <Button x:Name="SelectNewAvatarButton" Height="30" Width="150" HorizontalAlignment="Left" Margin="10, 0, 0, 0" VerticalAlignment="Center" Content="Выбрать файл" Command="{Binding ChooseNewAvatar_Click}" />
+                                    <TextBox x:Name="PathToFileTextBox" Width="250" VerticalAlignment="Center" Text="{Binding PathToAvatar, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                    <Button x:Name="SetDefaultAvatarButton" Height="30" Width="150" HorizontalAlignment="Right" Margin="0, 0, 10, 0" VerticalAlignment="Center" Content="Сбросить аватар" Command="{Binding SetDefaultAvatar_Click}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <TextBox x:Name="TypeSurnameTextBox" Height="40" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Введите фамилию" Text="{Binding RegSurname, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding RegSurnameToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegSurnameBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                    <TextBox x:Name="TypeNameTextBox" Height="40" Width="150" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Введите имя" Text="{Binding RegName, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding RegNameToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegNameBackground, UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                    <TextBox x:Name="TypePatronymicTextBox" Height="40" Width="150" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Введите отчество (необяз.)" Text="{Binding RegPatronymic, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding RegPatronymicToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegPatronymicBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <TextBox x:Name="TypeLoginTextBoxRV" Height="40" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Введите логин" Text="{Binding RegLogin, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding RegLoginToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegLoginBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                    <!--<PasswordBox x:Name="TypePasswordTextBoxRV" Height="40" Width="150" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                                    <PasswordBox x:Name="TypePasswordRepeatTextBox" Height="40" Width="150" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />-->
+                                    <components:BindablePasswordBox x:Name="TypePasswordTextBoxRV" Height="40" Width="150" HorizontalAlignment="Center" materialDesign:HintAssist.Hint="Введите пароль" Password="{Binding Password}" ToolTip="{Binding RegPasswordToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegPasswordBackground, UpdateSourceTrigger=PropertyChanged}" />
+                                    <components:BindablePasswordBox x:Name="TypePasswordRepeatTextBox" Height="40" Width="150" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Повторите пароль" Password="{Binding PasswordRepeat}" ToolTip="{Binding RegPasswordToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegPasswordBackground, UpdateSourceTrigger=PropertyChanged}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <TextBox x:Name="TypeEmailTextBox" Height="40" Width="150" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Введите E-Mail" Text="{Binding RegEmail, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding RegEmailToolTip, UpdateSourceTrigger=PropertyChanged}" Background="{Binding RegEmailBackground, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                                    <ComboBox x:Name="AgeComboBox" Height="40" Width="150" HorizontalAlignment="Center" SelectedValuePath="Content" VerticalContentAlignment="Bottom" materialDesign:HintAssist.Hint="Выберите возраст" SelectedValue="{Binding RegAge}" SelectedIndex="{Binding DefaultSelectedIndex}" Style="{StaticResource MaterialDesignComboBox}">
+                                        <ComboBoxItem Content="Не указан" />
+                                        <ComboBoxItem Content="18-30" />
+                                        <ComboBoxItem Content="31-49" />
+                                        <ComboBoxItem Content="50+" />
+                                    </ComboBox>
+
+                                    <ComboBox x:Name="HobbyComboBox" Height="40" Width="150" HorizontalAlignment="Right" ItemsSource="{Binding HobbiesList}" DisplayMemberPath="HobbyName" VerticalContentAlignment="Bottom" materialDesign:HintAssist.Hint="Выберите Ваше хобби" SelectedValue="{Binding RegHobby}" SelectedIndex="{Binding DefaultSelectedIndex}" Style="{StaticResource MaterialDesignComboBox}" />
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="5" Orientation="Horizontal">
+                                <Grid Width="640">
+                                    <Button x:Name="RegistrationButton" VerticalAlignment="Bottom" Content="Зарегистрироваться" Command="{Binding Registration_Click}" /> <!--CommandParameter="{Binding ElementName=TypePasswordRepeatTextBox}"-->
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

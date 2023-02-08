@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lets_Meet.Models.Chat">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACAJgAAABAAAAAAAAAAIAAAAAAAAAQAAAAQ=</HashCode>
+      <FileName>Models\Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Components.BindablePasswordBox">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQgAAAAAAAAAAAAAAAAAAAAABACAAAAAAIAAAA=</HashCode>
+      <FileName>Components\BindablePasswordBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Models.HobbiesStat">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAACAAAAAAAAAACAAAIgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HobbiesStat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Models.Hobby">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Hobby.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Models.Message">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEEBgAAAAAAAEAAAAAAAAAAkAAAAAQAAAAA=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Models.MusicFile">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhACAYAIFASACoCAAICAAQKAAEEQAAAAAAECIABAAA=</HashCode>
+      <FileName>Models\MusicFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Models.User">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFBAACIAACACEAACAEAAAIwABAAYAAACAAAQQSAAAEA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.AppContext">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAIQAAAAABAAAAAAAAAAAAgAAAAAAAARAAAAA=</HashCode>
+      <FileName>Services\AppContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.CryptPass">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Services\CryptPass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lets_Meet.Services.RelayCommand">
+    <Position X="9.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Services.ViewManager">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ViewManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.ViewModels.AdministratorViewModel">
+    <Position X="0.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAYRhMInWAQUAWElsgEB5XcLpRMgAkMiuiVJCBU8TkA=</HashCode>
+      <FileName>ViewModels\AdministratorViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.ViewModels.AuthRegViewModel">
+    <Position X="2.25" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JtYoJUBESYDAYphEvgmEJ1MggYIQeQpKk0CxXlAUQE4=</HashCode>
+      <FileName>ViewModels\AuthRegViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.ViewModels.MainViewModel">
+    <Position X="4" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>rQx4ZmDbzvX59+VUtvM9fR9by90Zf2szn3456+KddkM=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.ViewModels.UserProfileViewModel">
+    <Position X="5.75" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACBTABgAEoGABBQCBgAAIQAAAAgAAAEAEAAA=</HashCode>
+      <FileName>ViewModels\UserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Views.AdministratorView">
+    <Position X="7.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgAAACAEAAYAAAAAAAEMAAAQAAAIAAAA=</HashCode>
+      <FileName>Views\AdministratorView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Views.AuthRegView">
+    <Position X="9.25" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AuthRegView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Views.HobbyChart">
+    <Position X="11" Y="20.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Lets_Meet.Views.HobbyChart.RecordCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Views\HobbyChart.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Lets_Meet.Views.HobbyChart.BrushCollection" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Views\HobbyChart.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Lets_Meet.Views.HobbyChart.Bar" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Views\HobbyChart.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Lets_Meet.Views.HobbyChart.Record" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Views\HobbyChart.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgAAACAEAAYAAAAAAAEAAAAQAAAIAAIA=</HashCode>
+      <FileName>Views\HobbyChart.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Views.MainView">
+    <Position X="12.75" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgBAAAAAAAA=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.Views.UserProfileView">
+    <Position X="14.5" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\UserProfileView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Lets_Meet.App" Collapsed="true">
+    <Position X="16.25" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Lets_Meet.Services.IViewService">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ViewManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Lets_Meet.Models.Genres">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>7AdEcCpBBIAQCgEQAFALAWYQAFuAFAAAkKuQIFchBAg=</HashCode>
+      <FileName>Models\MusicFile.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

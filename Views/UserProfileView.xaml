@@ -1,0 +1,80 @@
+﻿<Window x:Class="Lets_Meet.Views.UserProfileView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Lets_Meet"
+        xmlns:viewModels="clr-namespace:Lets_Meet.ViewModels"
+        xmlns:components="clr-namespace:Lets_Meet.Components"
+        mc:Ignorable="d"
+        Title="{Binding TitleText}" Height="550" Width="450" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="LightGray">
+        <Border x:Name="MainField" Height="450" Width="400" Margin="10" Background="White" VerticalAlignment="Center" Padding="15" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGreen" ShadowDepth="0" />
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Width="350" Margin="0, 0, 0, 20">
+                    <Grid Width="350">
+                        <TextBlock x:Name="UserProfileHeaderTextBlock" Text="{Binding UserProfileHeader}" Height="30" Width="350" TextAlignment="Center" FontSize="20" FontWeight="Bold" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <Border Background="White" Height="130" Width="130" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="20">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="30" Color="LightPink" ShadowDepth="0" />
+                            </Border.Effect>
+
+                            <Image x:Name="ShowUserAvatarImage" Source="{Binding AvatarSourse}" Width="130" Height="130" Margin="0" />
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <TextBlock x:Name="ShowUserSurnameTextBlock" Height="30" VerticalAlignment="Bottom" Text="{Binding ShowUserSurname}" FontSize="15" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <TextBlock x:Name="ShowUserNameTextBlock" Height="30" VerticalAlignment="Bottom" Text="{Binding ShowUserName}" FontSize="15" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <TextBlock x:Name="ShowUserPatronymicTextBlock" Height="30" VerticalAlignment="Bottom" Text="{Binding ShowUserPatronymic}" FontSize="15" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <TextBlock x:Name="ShowUserAgeTextBlock" Height="30" VerticalAlignment="Bottom" Text="{Binding ShowUserAge}" FontSize="15" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6" Orientation="Horizontal" Width="350">
+                    <Grid Width="350">
+                        <TextBlock x:Name="ShowUserHobbyTextBlock" Height="30" VerticalAlignment="Bottom" Text="{Binding ShowUserHobby}" FontSize="15" />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
